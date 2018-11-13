@@ -48,7 +48,7 @@ trump_model = markovify.Text(text, state_size=2)
 
 # Print randomly-generated sentences
 for i in range(100):
-    print(lovecraft_model.make_sentence())
+    print(trump_model.sentence())
     print ''
 ```
 
