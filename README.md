@@ -37,6 +37,8 @@ touch markov_text_generator.py
 Open the file and add the following code:
 
 ```
+import sys
+sys.path.insert(0, "/usr/local/lib/python3.6/dist-packages/")
 import markovify
 
 # Get raw text as string.
@@ -44,12 +46,12 @@ with open("trump_tweets.txt") as f:
     text = f.read()
     
 # Build the Markov model
-trump_model = markovify.Text(text, state_size=2)
+model = markovify.Text(text, state_size=2)
 
 # Print randomly-generated sentences
 for i in range(100):
-    print(trump_model.sentence())
-    print ''
+    print(model.make_sentence())  # try to make sentences of no more than 60 characters
+    print()
 ```
 
 Run the program and MAKE TWEETING GREAT AGAIN.
@@ -69,6 +71,8 @@ verbatim. The program may hang if you run it with `state_size = 3 ` on some inpu
 When you've fully explored the possibilities of a single text, try combining two texts:
 
 ```
+import sys
+sys.path.insert(0, "/usr/local/lib/python3.6/dist-packages/")
 import markovify
 
 with open("trump_tweets.txt") as f:
