@@ -12,7 +12,13 @@ model_b = markovify.Text(text, state_size=2)
 
 model_combo = markovify.combine([model_a, model_b], [1.0, 20.0])
 
-# Print five randomly-generated sentences
+
+
+
+
+
+
+# Print randomly-generated sentences five
 for i in range(100):
     print(model_combo.make_sentence())
     print ''
